@@ -1,0 +1,31 @@
+.containerPrincipal {
+  background-color: white;
+  padding: 1.5rem;     
+  border-radius: 1rem;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  overflow-wrap: break-word;
+}
+
+.metaTagTitle {
+  margin-bottom: 1rem;
+}
+
+.metaTagText {
+  color: rgb(34, 34, 34);
+  font-weight: 600;
+}
+
+.titleTagColor {
+  font-weight: bold;
+  &__lightTheme{
+    color: rgb(199, 48, 48);
+  }
+  &__darkTheme {
+    color: rgb(48, 98, 199);
+  }
+}
+
+.metaTags {
+  margin: 0.5rem 0;
+}

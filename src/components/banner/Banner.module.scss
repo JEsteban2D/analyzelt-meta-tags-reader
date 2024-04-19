@@ -1,0 +1,22 @@
+.banner {
+  display: grid;
+  justify-content: center;
+  text-align: center;  
+  padding-top: 4rem;
+
+  &__title {
+    margin-bottom: 2rem;
+  }
+
+  &__text {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.darkTheme {
+  color: rgb(228, 228, 228);
+}
+
+.lightTheme {
+  color: rgb(23, 23, 23);
+}
