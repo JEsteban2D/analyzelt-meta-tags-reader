@@ -31,20 +31,25 @@ export const ImageDisplay: React.FC<Props> = ({
       {showContent && (
         <>
           <div>
-          <h2>Favicon</h2>
+            <h2>Favicon</h2>
             {faviconUrl && (
               <img src={faviconUrl} alt="Favicon" className={styles.icon} />
             )}
           </div>
           {/* Show og:image */}
-          {imageOg && (
+          {imageOg ? (
             <div className={styles.miniature}>
               <h2>OG Image</h2>
               <img src={imageOg} className={styles.img} alt="OG Image" />
             </div>
+          ) : (
+            <div className={styles.miniature}>
+            <h2>OG Image</h2>
+            <img src="/images/alert-triangle.svg" className={styles.img} />
+            </div>
           )}
           {/* Show Twitter image */}
-          {twitterImageUrl && (
+          {twitterImageUrl ? (
             <div className={styles.miniature}>
               <h2>Twitter Image</h2>
               <img
@@ -53,70 +58,149 @@ export const ImageDisplay: React.FC<Props> = ({
                 alt="Twitter Image"
               />
             </div>
+          ) : (
+            <div className={styles.miniature}>
+            <h2>Twitter Image</h2>
+            <img src="/images/alert-triangle.svg" className={styles.img} />
+            </div>
           )}
-          <div className={styles.miniature}>
-            <h2>X (FORMERLY TWITTER)</h2>
-            {imageUrl.map((imageUrl, index) => (
-              <div key={index} className={styles.containerImgTwitter}>
-                <img
-                  className={styles.imgTwitter}
-                  src={imageUrl}
-                  alt={`Thumbnail ${index}`}
-                />
+          {imageOg ? (
+            <div className={styles.miniature}>
+              <h2>X (FORMERLY TWITTER)</h2>
+              {imageUrl.map((imageUrl, index) => (
+                <div key={index} className={styles.containerImgTwitter}>
+                  <img
+                    className={styles.imgTwitter}
+                    src={imageUrl}
+                    alt={`Thumbnail ${index}`}
+                  />
+                  <span className={styles.imgTwitterText}>{shortUrl}</span>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className={styles.miniature}>
+              <h2>X (FORMERLY TWITTER)</h2>
+              <div className={styles.containerImgTwitter}>
+                <img src="/images/alert-triangle.svg" className={styles.imgTwitter} />
                 <span className={styles.imgTwitterText}>{shortUrl}</span>
               </div>
-            ))}
-          </div>
-          <div className={styles.miniature}>
+            </div>
+          )}
+          {imageOg ? (
+            <div className={styles.miniature}>
+              <h2>FACEBOOK</h2>
+              {imageUrl.map((imageUrl, index) => (
+                <div key={index} className={styles.containerImgFacebook}>
+                  <img
+                    className={styles.imgFacebook}
+                    src={imageUrl}
+                    alt={`Thumbnail ${index}`}
+                  />
+                  <div className={styles.imgFacebook__containerText}>
+                    <span className={styles.containerImgFacebook__url}>
+                      {shortUrl}
+                    </span>
+                    <span className={styles.containerImgFacebook__title}>
+                      {title}
+                    </span>
+                    <span className={styles.containerImgFacebook__description}>
+                      {description}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className={styles.miniature}>
             <h2>FACEBOOK</h2>
-            {imageUrl.map((imageUrl, index) => (
-              <div key={index} className={styles.containerImgFacebook}>
-                <img
-                  className={styles.imgFacebook}
-                  src={imageUrl}
-                  alt={`Thumbnail ${index}`}
-                />
-                <div className={styles.imgFacebook__containerText}>
-                  <span className={styles.containerImgFacebook__url}>
-                    {shortUrl}
-                  </span>
-                  <span className={styles.containerImgFacebook__title}>
+            <div className={styles.containerImgFacebook}>
+            <img
+              className={styles.imgFacebook}
+              src="/images/alert-triangle.svg"
+            />
+            <div className={styles.imgFacebook__containerText}>
+              <span className={styles.containerImgFacebook__url}>
+                {shortUrl}
+              </span>
+              <span className={styles.containerImgFacebook__title}>
+                {title}
+              </span>
+              <span className={styles.containerImgFacebook__description}>
+                {description}
+              </span>
+            </div>
+          </div>
+          </div>
+          )}
+
+          {imageOg ? (
+            <div className={styles.miniature}>
+              <h2>DISCORD</h2>
+              {imageUrl.map((imageUrl, index) => (
+                <div key={index} className={styles.containerImgDiscord}>
+                  <span className={styles.containerImgDiscord__site}>site</span>
+                  <span className={styles.containerImgDiscord__title}>
                     {title}
                   </span>
-                  <span className={styles.containerImgFacebook__description}>
+                  <span className={styles.containerImgDiscord__description}>
                     {description}
                   </span>
+                  <img
+                    className={styles.imgDiscord}
+                    src={imageUrl}
+                    alt={`Thumbnail ${index}`}
+                  />
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+          ) : (
+            <div className={styles.miniature}>
+              <h2>DISCORD</h2>
+            <div className={styles.containerImgDiscord}>
+            <span className={styles.containerImgDiscord__site}>site</span>
+            <span className={styles.containerImgDiscord__title}>
+              {title}
+            </span>
+            <span className={styles.containerImgDiscord__description}>
+              {description}
+            </span>
+            <img
+              className={styles.imgDiscord}
+              src="/images/alert-triangle-white.svg"
+            />
           </div>
-          <div className={styles.miniature}>
-            <h2>DISCORD</h2>
-            {imageUrl.map((imageUrl, index) => (
-              <div key={index} className={styles.containerImgDiscord}>
-                <span className={styles.containerImgDiscord__site}>site</span>
-                <span className={styles.containerImgDiscord__title}>
-                  {title}
-                </span>
-                <span className={styles.containerImgDiscord__description}>
-                  {description}
-                </span>
-                <img
-                  className={styles.imgDiscord}
-                  src={imageUrl}
-                  alt={`Thumbnail ${index}`}
-                />
-              </div>
-            ))}
           </div>
-          <div className={styles.miniature}>
+          )}
+          {imageOg ? (
+            <div className={styles.miniature}>
+              <h2>LINKEDIN</h2>
+              {imageUrl.map((imageUrl, index) => (
+                <div key={index} className={styles.containerImgLinkedin}>
+                  <img
+                    className={styles.imgLinkedin}
+                    src={imageUrl}
+                    alt={`Thumbnail ${index}`}
+                  />
+                  <div className={styles.containerTextLinkedin}>
+                    <span className={styles.containerTextLinkedin__title}>
+                      {title}
+                    </span>
+                    <span className={styles.containerTextLinkedin__url}>
+                      {shortUrl}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className={styles.miniature}>
             <h2>LINKEDIN</h2>
             {imageUrl.map((imageUrl, index) => (
-              <div key={index} className={styles.containerImgLinkedin}>
+              <div className={styles.containerImgLinkedin}>
                 <img
                   className={styles.imgLinkedin}
-                  src={imageUrl}
-                  alt={`Thumbnail ${index}`}
+                  src="/images/alert-triangle.svg"
                 />
                 <div className={styles.containerTextLinkedin}>
                   <span className={styles.containerTextLinkedin__title}>
@@ -129,6 +213,7 @@ export const ImageDisplay: React.FC<Props> = ({
               </div>
             ))}
           </div>
+          )}
         </>
       )}
     </div>

@@ -43,7 +43,7 @@ export const MetaTagsDisplay = () => {
           value={url}
           onChange={(e) => setUrl(e.target.value)}
         />
-        <button className={styles.inputButton} type="submit">
+        <button className={styles.inputButton} type="submit" disabled={!url.trim().length}>
           Analyze
         </button>
       </form>

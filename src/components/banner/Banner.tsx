@@ -7,7 +7,7 @@ export const Banner = () => {
 
   return (
     <div className={`${styles.banner} ${theme === 'dark' ? styles.darkTheme : styles.lightTheme}`}>
-      <h1 className={styles.banner__title}>Analyzelt</h1>
+      <h1 className={styles.banner__title}>StarboundTags</h1>
       <h2 className={styles.banner__text}>Here you URL</h2>      
     </div>
   )

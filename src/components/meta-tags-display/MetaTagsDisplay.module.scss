@@ -50,6 +50,11 @@
   gap: 2rem;
   margin-top: 3rem;
   padding: 2%;
+
+  @media (max-width: 990px) {
+    grid-template-columns: 1fr;
+  }
+
 }
 
 .form {
