@@ -9,7 +9,12 @@
   height: 30px;
   z-index: 2;
   position: absolute;
-  border-radius: 30px;  
+  border-radius: 30px; 
+
+  @media (max-width: 600px) {
+    top: 20px;
+    right: 10px;
+  }
 }
 
 .button {
