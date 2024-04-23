@@ -44,8 +44,10 @@ export const ImageDisplay: React.FC<Props> = ({
             </div>
           ) : (
             <div className={styles.miniature}>
-            <h2>OG Image</h2>
-            <img src="/images/alert-triangle.svg" className={styles.img} />
+              <h2>OG Image</h2>
+              <img src="/images/alert-triangle.svg" className={styles.img} 
+              alt="missing-image"
+              />
             </div>
           )}
           {/* Show Twitter image */}
@@ -60,8 +62,10 @@ export const ImageDisplay: React.FC<Props> = ({
             </div>
           ) : (
             <div className={styles.miniature}>
-            <h2>Twitter Image</h2>
-            <img src="/images/alert-triangle.svg" className={styles.img} />
+              <h2>Twitter Image</h2>
+              <img src="/images/alert-triangle.svg" className={styles.img} 
+              alt="missing-image"
+              />
             </div>
           )}
           {imageOg ? (
@@ -82,7 +86,11 @@ export const ImageDisplay: React.FC<Props> = ({
             <div className={styles.miniature}>
               <h2>X (FORMERLY TWITTER)</h2>
               <div className={styles.containerImgTwitter}>
-                <img src="/images/alert-triangle.svg" className={styles.imgTwitter} />
+                <img
+                  src="/images/alert-triangle.svg"
+                  className={styles.imgTwitter}
+                  alt="missing-image"
+                />
                 <span className={styles.imgTwitterText}>{shortUrl}</span>
               </div>
             </div>
@@ -113,25 +121,26 @@ export const ImageDisplay: React.FC<Props> = ({
             </div>
           ) : (
             <div className={styles.miniature}>
-            <h2>FACEBOOK</h2>
-            <div className={styles.containerImgFacebook}>
-            <img
-              className={styles.imgFacebook}
-              src="/images/alert-triangle.svg"
-            />
-            <div className={styles.imgFacebook__containerText}>
-              <span className={styles.containerImgFacebook__url}>
-                {shortUrl}
-              </span>
-              <span className={styles.containerImgFacebook__title}>
-                {title}
-              </span>
-              <span className={styles.containerImgFacebook__description}>
-                {description}
-              </span>
+              <h2>FACEBOOK</h2>
+              <div className={styles.containerImgFacebook}>
+                <img
+                  className={styles.imgFacebook}
+                  src="/images/alert-triangle.svg"
+                  alt="missing-image"
+                />
+                <div className={styles.imgFacebook__containerText}>
+                  <span className={styles.containerImgFacebook__url}>
+                    {shortUrl}
+                  </span>
+                  <span className={styles.containerImgFacebook__title}>
+                    {title}
+                  </span>
+                  <span className={styles.containerImgFacebook__description}>
+                    {description}
+                  </span>
+                </div>
+              </div>
             </div>
-          </div>
-          </div>
           )}
 
           {imageOg ? (
@@ -157,20 +166,20 @@ export const ImageDisplay: React.FC<Props> = ({
           ) : (
             <div className={styles.miniature}>
               <h2>DISCORD</h2>
-            <div className={styles.containerImgDiscord}>
-            <span className={styles.containerImgDiscord__site}>site</span>
-            <span className={styles.containerImgDiscord__title}>
-              {title}
-            </span>
-            <span className={styles.containerImgDiscord__description}>
-              {description}
-            </span>
-            <img
-              className={styles.imgDiscord}
-              src="/images/alert-triangle-white.svg"
-            />
-          </div>
-          </div>
+              <div className={styles.containerImgDiscord}>
+                <span className={styles.containerImgDiscord__site}>site</span>
+                <span className={styles.containerImgDiscord__title}>
+                  {title}
+                </span>
+                <span className={styles.containerImgDiscord__description}>
+                  {description}
+                </span>
+                <img
+                  className={styles.imgDiscord}
+                  src="/images/alert-triangle-white.svg"
+                />
+              </div>
+            </div>
           )}
           {imageOg ? (
             <div className={styles.miniature}>
@@ -195,25 +204,25 @@ export const ImageDisplay: React.FC<Props> = ({
             </div>
           ) : (
             <div className={styles.miniature}>
-            <h2>LINKEDIN</h2>
-            {imageUrl.map((imageUrl, index) => (
-              <div className={styles.containerImgLinkedin}>
-                <img
-                  className={styles.imgLinkedin}
-                  src="/images/alert-triangle.svg"
-                />
-                <div className={styles.containerTextLinkedin}>
-                  <span className={styles.containerTextLinkedin__title}>
-                    {title}
-                  </span>
-                  <span className={styles.containerTextLinkedin__url}>
-                    {shortUrl}
-                  </span>
+              <h2>LINKEDIN</h2>
+                <div className={styles.containerImgLinkedin}>
+                  <img
+                    className={styles.imgLinkedin}
+                    src="/images/alert-triangle.svg"
+                    alt="missing-image"
+                  />
+                  <div className={styles.containerTextLinkedin}>
+                    <span className={styles.containerTextLinkedin__title}>
+                      {title}
+                    </span>
+                    <span className={styles.containerTextLinkedin__url}>
+                      {shortUrl}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-          )}
+              
+            </div>
+            )}
         </>
       )}
     </div>

@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 import { NextApiRequest, NextApiResponse } from 'next';
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default  async (req: NextApiRequest, res: NextApiResponse) => {
   const url = req.query.url as string;
 
   if (!url) {
