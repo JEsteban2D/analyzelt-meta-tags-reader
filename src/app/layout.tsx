@@ -7,10 +7,12 @@ const inter = Inter({ subsets: ["latin"] });
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 export const metadata: Metadata = {
-  title: "StarboundTags",
+  title: "Meta Tags Analizer - Preview your meta Tags",
   description: "Meta Tags Analysis and SEO Optimization Tool",
   keywords: [
     "meta tags",
+    "meta tags analizer",
+    "meta tags reader",
     "seo",
     "search engine optimization",
     "website analysis",
