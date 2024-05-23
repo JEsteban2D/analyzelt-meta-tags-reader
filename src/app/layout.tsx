@@ -4,6 +4,8 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+
 export const metadata: Metadata = {
   title: "StarboundTags",
   description: "Meta Tags Analysis and SEO Optimization Tool",
@@ -27,16 +29,16 @@ export const metadata: Metadata = {
   openGraph: {
     title: "StarboundTags",
     description: "Meta Tags Analysis and SEO Optimization Tool",
-    url: "/images/bg-seo.png",
+    url: `${baseUrl}/images/bg-seo.png`,
     siteName: "StarboundTags",
     images: [
       {
-        url: "/images/bg-seo.png",
+        url: `${baseUrl}/images/bg-seo.png`,
         width: 800,
         height: 600,
       },
       {
-        url: "/images/bg-seo.png",
+        url: `${baseUrl}/images/bg-seo.png`,
         width: 1800,
         height: 1600,
       },
@@ -47,7 +49,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "StarboundTags",
     description: "Meta Tags Analysis and SEO Optimization Tool",
-    images: ["/images/bg-seo.png"],
+    images: [`${baseUrl}/images/bg-seo.png`],
   },
 };
 
